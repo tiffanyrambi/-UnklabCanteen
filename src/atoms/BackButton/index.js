@@ -5,7 +5,7 @@ const BackButton = ({ onBackPress }) => {
   return (
       <TouchableOpacity style={styles.backButton} onPress={onBackPress}>
         <Image
-          source={require('../../../assets/icon/ArrowPointingLeft.png')}
+          source={require('../../assets/icon/ArrowPointingLeft.png')}
           style={styles.backButtonImage}
         />
       </TouchableOpacity>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
-import BackButton from '../atoms/BackButton';
+import BackButton from '../../atoms/BackButton';
+import DropdownButton from '../../molecules/Dropdown';
 
 const Cashier1 = () => {
   return (
@@ -10,6 +11,8 @@ const Cashier1 = () => {
         <Text style={styles.title}>Cashier</Text>
       </View>
       <View style={styles.separator}></View>
+
+      <DropdownButton/>
     </View>
   );
 }
@@ -38,6 +41,7 @@ const styles = StyleSheet.create({
     color: '#303B3B',
     fontFamily: 'Poppins-SemiBold',
   },
+  
   separator: {
     position: 'absolute',
     top: 64,
