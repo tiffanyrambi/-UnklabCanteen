@@ -19,19 +19,21 @@ const DropdownButton = () => {
       <Text style={styles.location}>Location</Text>
       <TouchableOpacity style={styles.button} onPress={handlePress}>
         <Text style={styles.buttonText}>{selectedOption}</Text>
+        <View style={styles.arrowDown}></View>
       </TouchableOpacity>
       {showOptions && (
         <View style={styles.options}>
           <TouchableOpacity
-            style={styles.optionButton}
+            style={[styles.optionButton, {borderRadius: 10, backgroundColor: '#FFCD38'}]}
             onPress={() => handleOptionSelect('Annex')}
           >
             <Text style={styles.optionText}>Annex</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.optionButton}
+            style={[styles.optionButton, {borderRadius: 10, backgroundColor: '#FFCD38'}]}
             onPress={() => handleOptionSelect('Bougenville')}
           >
+            <View/>
             <Text style={styles.optionText}>Bougenville</Text>
           </TouchableOpacity>
         </View>
@@ -59,30 +61,47 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: 'white',
     height: 44,
-    justifyContent: 'center',
     paddingHorizontal: 10,
     borderRadius: 22,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   buttonText: {
     fontFamily: 'Poppins-SemiBold',
     fontSize: 12,
     fontWeight: 'bold',
   },
+  arrowDown: {
+    width: 0,
+    height: 0,
+    right: 10,
+    borderLeftWidth: 5,
+    borderLeftColor: 'transparent',
+    borderRightWidth: 5,
+    borderRightColor: 'transparent',
+    borderTopWidth: 5,
+    borderTopColor: 'black',
+    marginLeft: 5,
+  },
   options: {
-    backgroundColor: '#FFCD38',
+    backgroundColor: '#EAEAF5', 
     marginTop: 5,
     borderRadius: 5,
   },
+  
   optionButton: {
     height: 44,
     justifyContent: 'center',
     paddingHorizontal: 10,
+    borderWidth: 1,
+    borderColor: 'white',
   },
   optionText: {
     fontFamily: 'Poppins-SemiBold',
     fontSize: 12,
     fontWeight: 'bold',
-    color: 'white',
+    color: 'black',
   },
 });
 

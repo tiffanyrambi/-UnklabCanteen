@@ -5,14 +5,16 @@ import DropdownButton from '../../molecules/Dropdown';
 
 const Cashier1 = () => {
   return (
-    <View style={styles.navbar}>
-      <BackButton/>
-      <View style={styles.titleContainer}>
-        <Text style={styles.title}>Cashier</Text>
-      </View>
-      <View style={styles.separator}></View>
+    <View style={styles.container}>
+      <View style={styles.navbar}>
+        <BackButton/>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>Cashier</Text>
+        </View>
+        <View style={styles.separator}></View>
 
-      <DropdownButton/>
+        <DropdownButton/>
+      </View>
     </View>
   );
 }
@@ -20,6 +22,10 @@ const Cashier1 = () => {
 export default Cashier1;
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#EAEAF5',
+  },
   navbar: {
     height: 64,
     flexDirection: 'row',
