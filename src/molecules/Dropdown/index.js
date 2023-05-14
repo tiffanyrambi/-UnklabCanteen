@@ -24,17 +24,58 @@ const DropdownButton = () => {
       {showOptions && (
         <View style={styles.options}>
           <TouchableOpacity
-            style={[styles.optionButton, {borderRadius: 10, backgroundColor: '#FFCD38'}]}
+            style={styles.optionButton}
             onPress={() => handleOptionSelect('Annex')}
           >
             <Text style={styles.optionText}>Annex</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={[styles.optionButton, {borderRadius: 10, backgroundColor: '#FFCD38'}]}
+            style={styles.optionButton}
             onPress={() => handleOptionSelect('Bougenville')}
           >
-            <View/>
             <Text style={styles.optionText}>Bougenville</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.optionButton}
+            onPress={() => handleOptionSelect('Crystal')}
+          >
+            <Text style={styles.optionText}>Crystal</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.optionButton}
+            onPress={() => handleOptionSelect('Edelweiss')}
+          >
+            <Text style={styles.optionText}>Edelweiss</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.optionButton}
+            onPress={() => handleOptionSelect('Genset')}
+          >
+            <Text style={styles.optionText}>Genset</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.optionButton}
+            onPress={() => handleOptionSelect('Guest House')}
+          >
+            <Text style={styles.optionText}>Guest House</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.optionButton}
+            onPress={() => handleOptionSelect('Jasmine 1')}
+          >
+            <Text style={styles.optionText}>Jasmine 1</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.optionButton}
+            onPress={() => handleOptionSelect('Jasmine 2')}
+          >
+            <Text style={styles.optionText}>Jasmine 2</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.optionButton}
+            onPress={() => handleOptionSelect('Study Garden')}
+          >
+            <Text style={styles.optionText}>Study Garden</Text>
           </TouchableOpacity>
         </View>
       )}
@@ -71,6 +112,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-SemiBold',
     fontSize: 12,
     fontWeight: 'bold',
+    paddingLeft: 10,
   },
   arrowDown: {
     width: 0,
@@ -85,7 +127,6 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
   options: {
-    backgroundColor: '#EAEAF5', 
     marginTop: 5,
     borderRadius: 5,
   },
@@ -96,12 +137,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderWidth: 1,
     borderColor: 'white',
+    borderRadius: 22, 
+    backgroundColor: '#FFCD38',
+    
   },
   optionText: {
-    fontFamily: 'Poppins-SemiBold',
+    fontFamily: 'Poppins-Medium',
     fontSize: 12,
     fontWeight: 'bold',
     color: 'black',
+    paddingLeft: 10,
   },
 });
 

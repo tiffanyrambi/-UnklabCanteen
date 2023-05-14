@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import BackButton from '../../atoms/BackButton';
 import DropdownButton from '../../molecules/Dropdown';
+import PickMenu from '../../molecules/PickMenu';
 
 const Cashier1 = () => {
+
   return (
     <View style={styles.container}>
       <View style={styles.navbar}>
@@ -11,13 +13,14 @@ const Cashier1 = () => {
         <View style={styles.titleContainer}>
           <Text style={styles.title}>Cashier</Text>
         </View>
-        <View style={styles.separator}></View>
-
-        <DropdownButton/>
+        <View style={styles.separator}></View> 
       </View>
+      <DropdownButton />
+      <PickMenu/>
+      
     </View>
   );
-}
+};
 
 export default Cashier1;
 
@@ -47,7 +50,6 @@ const styles = StyleSheet.create({
     color: '#303B3B',
     fontFamily: 'Poppins-SemiBold',
   },
-  
   separator: {
     position: 'absolute',
     top: 64,
@@ -57,4 +59,41 @@ const styles = StyleSheet.create({
     backgroundColor: '#ABABA7',
     opacity: 0.38,
   },
+  
+  buttonLeft: {
+    width: 25,
+    height: 25,
+    borderRadius: 15,
+    borderWidth: 1,
+    borderColor: '#541690',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#FFFDFD',
+  },
+  buttonRight: {
+    width: 25,
+    height: 25,
+    borderRadius: 15,
+    borderWidth: 1,
+    borderColor: '#541690',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#FFFDFD',
+    marginLeft: 5,
+  },
+  buttonText: {
+    fontFamily: 'Poppins-SemiBold',
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#541690',
+  },
+  count: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: 'black',
+    marginLeft: 5,
+    marginRight: 5,
+  },
+  
 });
