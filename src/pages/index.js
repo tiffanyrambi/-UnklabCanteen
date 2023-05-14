@@ -1,5 +1,6 @@
 import SplashScreen from "./SplashScreen";
 import Menu1 from "./menu1";
-import Menu2 from "./menu2";
+import MainMenu from "./mainMenu";
+import Cashier from "./cashier";
 
-export {SplashScreen, Menu1, Menu2};
+export {SplashScreen, Menu1, MainMenu, Cashier};

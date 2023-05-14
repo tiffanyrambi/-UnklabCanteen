@@ -1,4 +1,4 @@
 import Header from "./Header";
-import MenuOption from "./MenuOption";
+import Menu from "./Menu";
 
-export {Header, MenuOption};
+export {Header, Menu};
