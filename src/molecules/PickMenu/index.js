@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 
-
 const PickMenu = () => {
-  const [count, setCount] = useState(0);
-  const [totalPrice, setTotalPrice] = useState(0);
+  const [count, setCount] = useState(1);
+  const [totalPrice, setTotalPrice] = useState(13000);
 
   const handleMinus = () => {
-    if (count > 0) {
+    if (count > 1) {
       setCount(count - 1);
       setTotalPrice(totalPrice - 13000);
     }
@@ -48,8 +47,6 @@ export default PickMenu;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    zIndex: -3,
   },
   item: {
     position: 'absolute',
