@@ -2,7 +2,7 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {SplashScreen} from './src/Screens';
+import {MainMenu, SplashScreen} from './src/Screens';
 
 //Function Component
 const Stack = createNativeStackNavigator();
@@ -14,6 +14,12 @@ const App = () => {
             <Stack.Screen
             name="SplashScreen"
             component={SplashScreen}
+            options={{headerShown: false}}
+            /> 
+
+            <Stack.Screen
+            name="MainMenu"
+            component={MainMenu}
             options={{headerShown: false}}
             /> 
 

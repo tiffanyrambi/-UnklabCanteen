@@ -5,13 +5,13 @@ import LinearGradient from 'react-native-linear-gradient';
 const SplashScreen = ({navigation}) => {
     useEffect(() => {
         setTimeout(() => {
-            navigation.replace('SignIn');
+            navigation.replace('MainMenu');
         }, 3000);
     }, []);
 
     return (
         <LinearGradient
-            colors={['#541690', '#FFFFFF']} // Ganti warna sesuai keinginan
+            colors={['#541690', '#FFFFFF']}
             start={{x: 0.5, y: 0}}
             end={{x: 0.5, y: 2}}
             style={styles.container}>
