@@ -1,10 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import axios from 'axios';
 
 const DropdownButton = () => {
   const [showOptions, setShowOptions] = useState(false);
   const [selectedOption, setSelectedOption] = useState({ label: '-- Select Place --', value: null });
   const [isPlaceSelected, setIsPlaceSelected] = useState(false);
+  const [asramaOptions, setAsramaOptions] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://10.153.148.81:1500/asrama')
+      .then(response => {
+        const options = response.data.data.map(asrama => ({
+          label: asrama.asrama,
+          value: asrama._id
+        }));
+        setAsramaOptions(options);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);
 
   const handlePress = () => {
     setShowOptions(!showOptions);
@@ -26,64 +42,23 @@ const DropdownButton = () => {
         </TouchableOpacity>
         {showOptions && (
           <View style={styles.options}>
-            <TouchableOpacity
-              style={styles.optionButton}
-              onPress={() => handleOptionSelect({ label: 'Annex', value: 'annex' })}
-            >
-              <Text style={styles.optionText}>Annex</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.optionButton}
-              onPress={() => handleOptionSelect({ label: 'Bougenville', value: 'bougenvile' })}
-            >
-              <Text style={styles.optionText}>Bougenville</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.optionButton}
-              onPress={() => handleOptionSelect({ label: 'Crystal', value: 'crystal' })}
-            >
-              <Text style={styles.optionText}>Crystal</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.optionButton}
-              onPress={() => handleOptionSelect({ label: 'Edelweiss', value: 'edelweiss' })}
-            >
-              <Text style={styles.optionText}>Edelweiss</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.optionButton}
-              onPress={() => handleOptionSelect({ label: 'Genset', value: 'genset' })}
-            >
-              <Text style={styles.optionText}>Genset</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.optionButton}
-              onPress={() => handleOptionSelect({ label: 'Jasmine 1', value: 'jasmine1' })}
-            >
-              <Text style={styles.optionText}>Jasmine 1</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.optionButton}
-              onPress={() => handleOptionSelect({ label: 'Jasmine 2', value: 'jasmine2' })}
-            >
-              <Text style={styles.optionText}>Jasmine 2</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.optionButton}
-              onPress={() => handleOptionSelect({ label: 'Study Garden', value: 'studygarden' })}
-            >
-              <Text style={styles.optionText}>Study Garden</Text>
-            </TouchableOpacity>
-            
+            {asramaOptions.map(option => (
+              <TouchableOpacity
+                key={option.value}
+                style={styles.optionButton}
+                onPress={() => handleOptionSelect(option)}
+              >
+                <Text style={styles.optionText}>{option.label}</Text>
+              </TouchableOpacity>
+            ))}
           </View>
         )}
       </View>
-
       <TouchableOpacity
         style={[styles.confirmButton, { opacity: selectedOption.value === null ? 0.5 : 1 }]}
         disabled={selectedOption.value === null}
       >
-        <Text style={styles.confirmText}>CONFIRM</Text>
+        <Text style={styles.confirmButtonText}>CONFIRM</Text>
       </TouchableOpacity>
     </View>
   );
