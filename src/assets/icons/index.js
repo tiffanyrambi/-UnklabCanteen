@@ -1,3 +1,3 @@
 import UC from './UC.svg';
-
-export { UC};
+import Eye from './eye.svg';
+export { UC, Eye};
