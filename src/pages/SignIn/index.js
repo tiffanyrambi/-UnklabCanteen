@@ -25,7 +25,7 @@ const SignIn = ({navigation}) => {
           <Gap height={10} />
           <Text style={styles.forgotPasswordText}>Forgot password?</Text>
           <Gap height={80} />
-          <Buttom title="Log In" color="#541690" textColor="#FFFFFF" onPress={() => navigation.navigate('Home')}/>
+          <Buttom title="Log In" color="#541690" textColor="#FFFFFF" onPress={() => navigation.navigate('MainMenu')}/>
         </View>
       </ScrollView>
     </View>

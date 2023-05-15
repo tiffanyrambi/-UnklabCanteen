@@ -28,7 +28,7 @@ const SignUp = ({navigation}) => {
             </TouchableOpacity>
           </View>
           <Gap height={80} />
-          <Buttom title="Sign Up" color="#541690" textColor="#FFFFFF" onPress={() => navigation.navigate('Home')}/>
+          <Buttom title="Sign Up" color="#541690" textColor="#FFFFFF" onPress={() => navigation.navigate('MainMenu')}/>
         </View>
       </ScrollView>
     </View>
