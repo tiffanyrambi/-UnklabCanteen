@@ -1,0 +1,39 @@
+import {StyleSheet, Text, View} from 'react-native';
+import React, {useEffect} from 'react';
+import LinearGradient from 'react-native-linear-gradient';
+
+const SuccessfulScreen = ({navigation}) => {
+    useEffect(() => {
+        setTimeout(() => {
+            navigation.replace('MainMenu');
+        }, 3000);
+    }, []);
+
+    return (
+        <LinearGradient
+            colors={['#541690', '#FFFFFF']}
+            start={{x: 0.5, y: 0}}
+            end={{x: 0.5, y: 2}}
+            style={styles.container}>
+            <Text style={styles.text1}>Order</Text>
+            <Text style={styles.text1}>Successful!</Text>
+        </LinearGradient>
+    );
+};
+
+export default SuccessfulScreen;
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    
+    text1: {
+        fontSize: 40,
+        fontFamily: 'Poppins-SemiBold',
+        color: 'white',
+        textAlign: 'center'
+    },
+});
