@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ABABA7',
     opacity: 0.38,
     marginTop: 20,
-    top: 530, 
+    top: 640, 
     marginVertical: 20,
   },
   totalContainer: {
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     paddingHorizontal: 30,
     paddingBottom: 20,
-    top: 550, 
+    top: 650, 
   },
   totalText: {
     fontFamily: 'Poppins-SemiBold',

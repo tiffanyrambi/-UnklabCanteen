@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import axios from 'axios';
 
-const DropdownButton = () => {
+const DropdownButton = ({onPress}) => {
   const [showOptions, setShowOptions] = useState(false);
   const [selectedOption, setSelectedOption] = useState({ label: '-- Select Place --', value: null });
   const [isPlaceSelected, setIsPlaceSelected] = useState(false);
   const [asramaOptions, setAsramaOptions] = useState([]);
 
   useEffect(() => {
-    axios.get('http://10.153.148.81:1500/asrama')
+    axios.get('http://192.168.183.52:1500/asrama')
       .then(response => {
         const options = response.data.data.map(asrama => ({
           label: asrama.asrama,
@@ -56,8 +56,7 @@ const DropdownButton = () => {
       </View>
       <TouchableOpacity
         style={[styles.confirmButton, { opacity: selectedOption.value === null ? 0.5 : 1 }]}
-        disabled={selectedOption.value === null}
-      >
+        disabled={selectedOption.value === null} onPress={onPress}>
         <Text style={styles.confirmButtonText}>CONFIRM</Text>
       </TouchableOpacity>
     </View>
@@ -70,7 +69,7 @@ const styles = StyleSheet.create({
   container: {
     position: 'absolute',
     width: 345,
-    height: 610,
+    height: 755,
     left: 30,
     top: 120,
     justifyContent: 'space-between',

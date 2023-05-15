@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { BackButton,DropdownButton,PickMenu } from '../../components';
 
-const Cashier = () => {
+const Cashier = ({navigation}) => {
 
   return (
     <View style={styles.container}>
@@ -13,7 +13,7 @@ const Cashier = () => {
         </View>
         <View style={styles.separator}></View> 
       </View>
-      <DropdownButton />
+      <DropdownButton onPress={()=>navigation.navigate('SuccessfulScreen')} />
       <PickMenu/>
       
     </View>

@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import{SplashScreen, SignIn, SignUp, Home, MainMenu, Cashier } from '../pages';
+import{SplashScreen, SignIn, SignUp, Home, MainMenu, Cashier, SuccessfulScreen} from '../pages';
 
 
 const Stack = createNativeStackNavigator();
@@ -15,6 +15,7 @@ const Router = () => {
             <Stack.Screen name="MainMenu" component={MainMenu} options={{ headerShown: false }} />
             <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
             <Stack.Screen name="Cashier" component={Cashier} options={{ headerShown: false }} />
+            <Stack.Screen name="SuccessfulScreen" component={SuccessfulScreen} options={{ headerShown: false }} />
         </Stack.Navigator>
         
     );
